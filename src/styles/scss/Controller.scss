@@ -1,0 +1,103 @@
+@import 'variables';
+
+.controller {
+  margin: 1rem;
+  background-color: $yellow;
+  border-radius: 8px;
+  font-family: $main-font;
+  width: $controller-width;
+  @media screen and (max-width: $break-sm) {
+    font-size: 0.9em;
+  }
+  .controller-generation {
+    padding: 0.7em;
+    font-size: 1.2em;
+    color: lighten($magenta, 15%);
+    text-align: center;
+    span {
+      color: lighten($yellow, 40%);
+      border-radius: 3px;
+      padding: 0.2em 0.555em;
+      margin: 0.5em;
+      font-family: 'Nova Mono', monospace;
+      background-color: darken($yellow, 30%);
+    }
+  }
+  hr {
+    padding: 0;
+    margin: 0;
+  }
+  .controller-controls {
+    padding: 0.5em 0;
+    p {
+      padding: 0 0.5em 0.4em 0.5em;
+      margin: 0;
+    }
+  }
+  .controller-start-config {
+    padding: 0.5em 0;
+    p {
+      padding: 0 0.5em 0.4em 0.5em;
+      margin: 0;
+    }
+  }
+  .controller-button {
+    display: block;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 0.4em;
+    height: 2.1rem;
+    font-size: 1em;
+    font-family: $main-font;
+    border-bottom: 1px solid $grey;
+    background-color: darken($yellow, 8%);
+    cursor: pointer;
+    &:nth-child(2) {
+      border-top: 1px solid $grey;
+    }
+    &:hover, &:focus {
+      outline: none;
+      background-color: darken($yellow, 6%);
+    }
+    &:active {
+      font-size: 0.95em;
+      background-color: darken($yellow, 4%);
+    }
+    @media screen and (max-width: $break-sm) {
+      font-size: 0.9em;
+    }
+  }
+  .controller-pattern-dropdown-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    .controller-dropdown-element {
+      .controller-dropdown-button {
+        display: block;
+        width: 90%;
+        margin: auto;
+        color: $light;
+        border: none;
+        padding: 0.3em;
+        height: 1.8rem;
+        font-size: 0.9em;
+        font-family: $main-font;
+        background-color: darken($yellow, 6%);
+        border-bottom: 1px solid $grey;
+        cursor: pointer;
+        &:hover, &:focus {
+          outline: none;
+          background-color: darken($yellow, 4%);
+        }
+        &:active {
+          font-size: 0.85em;
+          background-color: darken($yellow, 2%);
+        }
+        @media screen and (max-width: $break-sm) {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}

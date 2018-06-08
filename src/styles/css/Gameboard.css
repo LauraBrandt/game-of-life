@@ -1,0 +1,31 @@
+.gameboard {
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  background-color: #fafafa;
+  margin: 0 1rem; }
+
+.board-row {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  display: flex; }
+
+.board-cell {
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa; }
+  @media screen and (max-width: 850px) {
+    .board-cell {
+      height: 14px;
+      width: 14px; } }
+  @media screen and (max-width: 750px) {
+    .board-cell {
+      height: 12px;
+      width: 12px; } }
+  @media screen and (max-width: 600px) {
+    .board-cell {
+      height: 9px;
+      width: 9px; } }
+  .board-cell.active {
+    background-color: #222; }

@@ -1,0 +1,49 @@
+@import 'variables';
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  background-color: $magenta;
+}
+
+.app-header {
+  text-align: center;
+  font-family: 'Nova Mono', monospace;
+  font-size: 1.3rem;
+  color: $light;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  h1 {
+    margin: 0;
+    margin-right: $controller-width + 48px;
+    padding: 0.3em 0.5em 0.4em 0.5em;
+    @media screen and (max-width: $break-md) {
+      margin: 0;
+    }
+  }
+}
+
+.app-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 1.5*$footer-height; 
+  @media screen and (max-width: $break-md) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.app-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darken($light, 10%);
+  a {
+    color: $light;
+  }
+}

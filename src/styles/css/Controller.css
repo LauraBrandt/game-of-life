@@ -1,0 +1,83 @@
+.controller {
+  margin: 1rem;
+  background-color: #ffc30f;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  width: 300px; }
+  @media screen and (max-width: 750px) {
+    .controller {
+      font-size: 0.9em; } }
+  .controller .controller-generation {
+    padding: 0.7em;
+    font-size: 1.2em;
+    color: #d7125e;
+    text-align: center; }
+    .controller .controller-generation span {
+      color: #fff6db;
+      border-radius: 3px;
+      padding: 0.2em 0.555em;
+      margin: 0.5em;
+      font-family: 'Nova Mono', monospace;
+      background-color: #755800; }
+  .controller hr {
+    padding: 0;
+    margin: 0; }
+  .controller .controller-controls {
+    padding: 0.5em 0; }
+    .controller .controller-controls p {
+      padding: 0 0.5em 0.4em 0.5em;
+      margin: 0; }
+  .controller .controller-start-config {
+    padding: 0.5em 0; }
+    .controller .controller-start-config p {
+      padding: 0 0.5em 0.4em 0.5em;
+      margin: 0; }
+  .controller .controller-button {
+    display: block;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 0.4em;
+    height: 2.1rem;
+    font-size: 1em;
+    font-family: "Montserrat", sans-serif;
+    border-bottom: 1px solid #aaa;
+    background-color: #e5ac00;
+    cursor: pointer; }
+    .controller .controller-button:nth-child(2) {
+      border-top: 1px solid #aaa; }
+    .controller .controller-button:hover, .controller .controller-button:focus {
+      outline: none;
+      background-color: #efb400; }
+    .controller .controller-button:active {
+      font-size: 0.95em;
+      background-color: #fabb00; }
+    @media screen and (max-width: 750px) {
+      .controller .controller-button {
+        font-size: 0.9em; } }
+  .controller .controller-pattern-dropdown-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button {
+      display: block;
+      width: 90%;
+      margin: auto;
+      color: #fafafa;
+      border: none;
+      padding: 0.3em;
+      height: 1.8rem;
+      font-size: 0.9em;
+      font-family: "Montserrat", sans-serif;
+      background-color: #efb400;
+      border-bottom: 1px solid #aaa;
+      cursor: pointer; }
+      .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button:hover, .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button:focus {
+        outline: none;
+        background-color: #fabb00; }
+      .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button:active {
+        font-size: 0.85em;
+        background-color: #ffc005; }
+      @media screen and (max-width: 750px) {
+        .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button {
+          font-size: 0.8em; } }
