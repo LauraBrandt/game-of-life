@@ -1,44 +1,35 @@
 @import 'variables';
 
-.controller {
-  margin: 1rem;
+%controller-div {
   background-color: $yellow;
   border-radius: 8px;
-  font-family: $main-font;
-  width: $controller-width;
-  @media screen and (max-width: $break-sm) {
-    font-size: 0.9em;
-  }
-  .controller-generation {
-    padding: 0.7em;
-    font-size: 1.2em;
-    color: lighten($magenta, 15%);
-    text-align: center;
-    span {
-      color: lighten($yellow, 40%);
-      border-radius: 3px;
-      padding: 0.2em 0.555em;
-      margin: 0.5em;
-      font-family: 'Nova Mono', monospace;
-      background-color: darken($yellow, 30%);
-    }
-  }
-  hr {
-    padding: 0;
+  margin: 1rem;
+  padding: 0.5em 0;
+  p {
+    padding: 0 0.5em 0.4em 0.5em;
     margin: 0;
   }
+}
+
+.controller {
+  font-family: $main-font;
+  display: flex;
+  margin: 0 1em;
+  @media screen and (max-width: $break-sm) {
+    font-size: 0.9em;
+    flex-direction: column;
+  }
+
   .controller-controls {
-    padding: 0.5em 0;
-    p {
-      padding: 0 0.5em 0.4em 0.5em;
-      margin: 0;
-    }
+    @extend %controller-div;
+    flex: 4;
+    height: max-content; 
   }
   .controller-start-config {
-    padding: 0.5em 0;
-    p {
-      padding: 0 0.5em 0.4em 0.5em;
-      margin: 0;
+    @extend %controller-div;
+    flex: 5;
+    span {
+      color: rgba(0,0,0,0.7);
     }
   }
   .controller-button {
@@ -68,7 +59,7 @@
       font-size: 0.9em;
     }
   }
-  .controller-pattern-dropdown-list {
+  .controller-pattern-dropdown {
     list-style-type: none;
     margin: 0;
     padding: 0;

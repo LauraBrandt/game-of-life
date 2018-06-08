@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Generations from './components/Generations';
 import Gameboard from './components/Gameboard';
 import Controller from './components/Controller';
 import './styles/css/App.css';
@@ -11,6 +12,7 @@ class App extends Component {
           <h1>Conway's Game of Life</h1>
         </header>
         <main className="app-main">
+          <Generations />
           <Gameboard/>
           <Controller/>
         </main>

@@ -19,7 +19,7 @@
     .board-cell {
       height: 14px;
       width: 14px; } }
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 770px) {
     .board-cell {
       height: 12px;
       width: 12px; } }

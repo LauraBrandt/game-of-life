@@ -1,37 +1,27 @@
-.controller {
-  margin: 1rem;
+.controller .controller-controls, .controller .controller-start-config {
   background-color: #ffc30f;
   border-radius: 8px;
-  font-family: "Montserrat", sans-serif;
-  width: 300px; }
-  @media screen and (max-width: 750px) {
-    .controller {
-      font-size: 0.9em; } }
-  .controller .controller-generation {
-    padding: 0.7em;
-    font-size: 1.2em;
-    color: #d7125e;
-    text-align: center; }
-    .controller .controller-generation span {
-      color: #fff6db;
-      border-radius: 3px;
-      padding: 0.2em 0.555em;
-      margin: 0.5em;
-      font-family: 'Nova Mono', monospace;
-      background-color: #755800; }
-  .controller hr {
-    padding: 0;
+  margin: 1rem;
+  padding: 0.5em 0; }
+  .controller .controller-controls p, .controller .controller-start-config p {
+    padding: 0 0.5em 0.4em 0.5em;
     margin: 0; }
+
+.controller {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  margin: 0 1em; }
+  @media screen and (max-width: 770px) {
+    .controller {
+      font-size: 0.9em;
+      flex-direction: column; } }
   .controller .controller-controls {
-    padding: 0.5em 0; }
-    .controller .controller-controls p {
-      padding: 0 0.5em 0.4em 0.5em;
-      margin: 0; }
+    flex: 4;
+    height: max-content; }
   .controller .controller-start-config {
-    padding: 0.5em 0; }
-    .controller .controller-start-config p {
-      padding: 0 0.5em 0.4em 0.5em;
-      margin: 0; }
+    flex: 5; }
+    .controller .controller-start-config span {
+      color: rgba(0, 0, 0, 0.7); }
   .controller .controller-button {
     display: block;
     width: 100%;
@@ -52,14 +42,14 @@
     .controller .controller-button:active {
       font-size: 0.95em;
       background-color: #fabb00; }
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 770px) {
       .controller .controller-button {
         font-size: 0.9em; } }
-  .controller .controller-pattern-dropdown-list {
+  .controller .controller-pattern-dropdown {
     list-style-type: none;
     margin: 0;
     padding: 0; }
-    .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button {
+    .controller .controller-pattern-dropdown .controller-dropdown-element .controller-dropdown-button {
       display: block;
       width: 90%;
       margin: auto;
@@ -72,12 +62,12 @@
       background-color: #efb400;
       border-bottom: 1px solid #aaa;
       cursor: pointer; }
-      .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button:hover, .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button:focus {
+      .controller .controller-pattern-dropdown .controller-dropdown-element .controller-dropdown-button:hover, .controller .controller-pattern-dropdown .controller-dropdown-element .controller-dropdown-button:focus {
         outline: none;
         background-color: #fabb00; }
-      .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button:active {
+      .controller .controller-pattern-dropdown .controller-dropdown-element .controller-dropdown-button:active {
         font-size: 0.85em;
         background-color: #ffc005; }
-      @media screen and (max-width: 750px) {
-        .controller .controller-pattern-dropdown-list .controller-dropdown-element .controller-dropdown-button {
+      @media screen and (max-width: 770px) {
+        .controller .controller-pattern-dropdown .controller-dropdown-element .controller-dropdown-button {
           font-size: 0.8em; } }

@@ -1,0 +1,15 @@
+.generations {
+  margin: 0 1em 0.5em 1em;
+  font-size: 1.1em;
+  color: #ffd65c;
+  text-align: center;
+  font-family: "Montserrat", sans-serif; }
+  .generations span {
+    color: #d7125e;
+    border-radius: 3px;
+    padding: 0.15em 0.55em;
+    margin: 0.5em;
+    font-family: 'Nova Mono', monospace;
+    background-color: #ffc30f;
+    font-size: 1.05em;
+    text-shadow: 0 0 2px white; }

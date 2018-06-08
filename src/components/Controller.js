@@ -78,29 +78,27 @@ class Controller extends Component {
   render() {
     return (
       <div className="controller">
-        <div className="controller-generation">Generation: <span>{this.props.generation}</span></div>
-        <hr/>
         <div className="controller-controls">
           <p>Controls</p>
-          <button className="controller-button controller-toggle-play" onClick={this.togglePlay}>
+          <button className="controller-button" onClick={this.togglePlay}>
             {this.state.isPlaying ? 'Pause' : 'Play'}
           </button>
-          <button className="controller-button controller-clear" onClick={this.clear}>
-            Clear Board
+          <button className="controller-button" onClick={this.clear}>
+            Clear
           </button>
         </div>
-        <hr/>
+        
         <div className="controller-start-config">
-          <p>Choose a starting configuration (or click the squares on the board to make your own)</p>
-          <button className="controller-button controller-random" onClick={this.randomize}>
+          <p>Choose a starting configuration: <br/><span>(or click the squares on the board to make your own)</span></p>
+          <button className="controller-button" onClick={this.randomize}>
             Random
           </button>
           <div className="controller-patterns">
-            <button className="controller-button controller-pattern-dropdown" onClick={this.toggleDropdown}>
+            <button className="controller-button controller-pattern" onClick={this.toggleDropdown}>
               Patterns &#9662;
             </button>
             {this.state.dropdownOpen &&
-              <ul className="controller-pattern-dropdown-list"> 
+              <ul className="controller-pattern-dropdown"> 
                 {patterns.map(pattern => 
                   <li key={pattern.code} className="controller-dropdown-element">
                     <button className="controller-dropdown-button" onClick={this.setPattern.bind(null, pattern.cells)}>

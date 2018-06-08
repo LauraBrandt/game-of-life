@@ -7,30 +7,22 @@
 }
 
 .app-header {
-  text-align: center;
-  font-family: 'Nova Mono', monospace;
-  font-size: 1.3rem;
-  color: $light;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   h1 {
+    text-align: center;
+    font-family: 'Nova Mono', monospace;
+    font-size: 2.2rem;
+    color: $light;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     margin: 0;
-    margin-right: $controller-width + 48px;
     padding: 0.3em 0.5em 0.4em 0.5em;
-    @media screen and (max-width: $break-md) {
-      margin: 0;
-    }
   }
 }
 
 .app-main {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-bottom: 1.5*$footer-height; 
-  @media screen and (max-width: $break-md) {
-    flex-direction: column;
-    align-items: center;
-  }
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: $footer-height;
 }
 
 .app-footer {
@@ -43,6 +35,7 @@
   justify-content: center;
   align-items: center;
   color: darken($light, 10%);
+  padding: 0 0.5em;
   a {
     color: $light;
   }
