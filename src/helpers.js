@@ -1,7 +1,4 @@
-export const getInitialState = () => {
-  const numRows = 30;
-  const numCols = 50;
-  
+export const getInitialState = (numRows, numCols) => {
   const inner = new Array(numCols).fill(0);
   const outer = new Array(numRows).fill(inner);
   
