@@ -20,7 +20,14 @@ export const getPatternState = (cellArray, liveCells) => {
   return newArray;
 }
 
-const getNumNeighbors = (cell, cellArray) => {
+export const toggleCell = (cellArray, cell) => {
+  const newArray = [...cellArray];
+  const [y, x] = cell;
+  newArray[y][x] = (newArray[y][x] + 1) % 2;
+  return newArray;
+}
+
+export const getNumNeighbors = (cell, cellArray) => {
   const [y, x] = cell;
 
   let total = 0;
