@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { tick, setRandom, setPattern, clearBoard } from '../actions/boardActions';
 import { incrementGeneration, resetGeneration } from '../actions/generationActions';
 import '../styles/css/Controller.css';
-
 import patterns from '../startPatterns';
 
 class Controller extends Component {
@@ -116,7 +115,6 @@ class Controller extends Component {
 }
 
 Controller.propTypes = {
-  generation: PropTypes.number.isRequired,
   tick: PropTypes.func.isRequired,
   randomize: PropTypes.func.isRequired,
   setPattern: PropTypes.func.isRequired,
@@ -124,10 +122,6 @@ Controller.propTypes = {
   incrementGeneration: PropTypes.func.isRequired,
   resetGeneration: PropTypes.func.isRequired
 }
-
-const mapStateToProps = state => ({
-  generation: state.generation
-});
 
 const mapDispatchToProps = dispatch => ({
   randomize: () => dispatch(setRandom()),
@@ -138,4 +132,4 @@ const mapDispatchToProps = dispatch => ({
   resetGeneration: () => dispatch(resetGeneration()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Controller);
+export default connect(null, mapDispatchToProps)(Controller);

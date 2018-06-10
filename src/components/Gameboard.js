@@ -6,14 +6,18 @@ import '../styles/css/Gameboard.css';
 
 class Gameboard extends Component {
   render() {
-    const { board } = this.props;
+    const { board, toggleCell } = this.props;
 
     return (
       <div className="gameboard">
         { board.map((row, i) => 
           <div className="board-row" key={i}>
             {row.map((cell, j) => 
-              <div className={`board-cell${cell ? ' active' : ''}`} key={j} onClick={this.props.toggleCell.bind(null, [i, j])}></div>
+              <div 
+                className={`board-cell${cell ? ' active' : ''}`} 
+                key={j} 
+                onClick={toggleCell.bind(null, [i, j])}>
+              </div>
             )}
           </div>
         )}
