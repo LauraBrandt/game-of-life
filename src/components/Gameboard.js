@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { toggleCell } from '../actions/boardActions';
 import '../styles/css/Gameboard.css';
 
-class Gameboard extends Component {
+export class Gameboard extends Component {
   render() {
     const { board, toggleCell } = this.props;
 

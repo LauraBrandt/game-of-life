@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> snapshot renders correctly 1`] = `
+<div
+  className="app"
+>
+  <header
+    className="app-header"
+  >
+    <h1>
+      Conway's Game of Life
+    </h1>
+  </header>
+  <main
+    className="app-main"
+  >
+    <div
+      className="generations"
+    >
+      Generation: 
+      <span>
+        0
+      </span>
+    </div>
+    <div
+      className="gameboard"
+    />
+    <div
+      className="controller"
+    >
+      <div
+        className="controller-controls"
+      >
+        <p>
+          Controls
+        </p>
+        <button
+          className="controller-button"
+          onClick={[Function]}
+        >
+          Play
+        </button>
+        <button
+          className="controller-button"
+          onClick={[Function]}
+        >
+          Clear
+        </button>
+      </div>
+      <div
+        className="controller-start-config"
+      >
+        <p>
+          Choose a starting configuration: 
+          <br />
+          <span>
+            (or click the squares on the board to make your own)
+          </span>
+        </p>
+        <button
+          className="controller-button"
+          onClick={[Function]}
+        >
+          Random
+        </button>
+        <div
+          className="controller-patterns"
+        >
+          <button
+            className="controller-button controller-pattern"
+            onClick={[Function]}
+          >
+            Patterns ▾
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer
+    className="app-footer"
+  >
+    <p>
+      Designed and coded by 
+      <a
+        href="https://github.com/LauraBrandt"
+      >
+        Laura Brandt
+      </a>
+       as part of the 
+      <a
+        href="https://learn.freecodecamp.org/coding-interview-prep/take-home-projects/build-the-game-of-life/"
+      >
+        FreeCodeCamp
+      </a>
+       curriculum.
+    </p>
+  </footer>
+</div>
+`;

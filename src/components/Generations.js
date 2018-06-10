@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import '../styles/css/Generations.css';
 
-class Generations extends Component {
+export class Generations extends Component {
   render() {
     return (
       <div className="generations">

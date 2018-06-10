@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Gameboard/> snapshot renders correctly 1`] = `
+<div
+  className="gameboard"
+>
+  <div
+    className="board-row"
+  >
+    <div
+      className="board-cell"
+      onClick={[Function]}
+    />
+    <div
+      className="board-cell active"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <div
+      className="board-cell active"
+      onClick={[Function]}
+    />
+    <div
+      className="board-cell"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

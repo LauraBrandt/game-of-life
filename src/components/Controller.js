@@ -6,7 +6,7 @@ import { incrementGeneration, resetGeneration } from '../actions/generationActio
 import '../styles/css/Controller.css';
 import patterns from '../startPatterns';
 
-class Controller extends Component {
+export class Controller extends Component {
   constructor() {
     super();
 

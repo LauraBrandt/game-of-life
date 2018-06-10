@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Controller/> snapshot renders correctly 1`] = `
+<div
+  className="controller"
+>
+  <div
+    className="controller-controls"
+  >
+    <p>
+      Controls
+    </p>
+    <button
+      className="controller-button"
+      onClick={[Function]}
+    >
+      Play
+    </button>
+    <button
+      className="controller-button"
+      onClick={[Function]}
+    >
+      Clear
+    </button>
+  </div>
+  <div
+    className="controller-start-config"
+  >
+    <p>
+      Choose a starting configuration: 
+      <br />
+      <span>
+        (or click the squares on the board to make your own)
+      </span>
+    </p>
+    <button
+      className="controller-button"
+      onClick={[Function]}
+    >
+      Random
+    </button>
+    <div
+      className="controller-patterns"
+    >
+      <button
+        className="controller-button controller-pattern"
+        onClick={[Function]}
+      >
+        Patterns ▾
+      </button>
+    </div>
+  </div>
+</div>
+`;
