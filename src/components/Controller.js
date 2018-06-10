@@ -14,6 +14,7 @@ class Controller extends Component {
       timer: null,
       isPlaying: false,
       dropdownOpen: false,
+      patterns: []
     }
 
     this.togglePlay = this.togglePlay.bind(this);
@@ -67,6 +68,7 @@ class Controller extends Component {
   }
 
   componentDidMount() {
+    this.setState({ patterns });
     this.randomize();
   }
 
@@ -98,7 +100,7 @@ class Controller extends Component {
             </button>
             {this.state.dropdownOpen &&
               <ul className="controller-pattern-dropdown"> 
-                {patterns.map(pattern => 
+                {this.state.patterns.map(pattern => 
                   <li key={pattern.code} className="controller-dropdown-element">
                     <button className="controller-dropdown-button" onClick={this.setPattern.bind(null, pattern.cells)}>
                       {pattern.name}
