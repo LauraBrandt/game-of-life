@@ -32,7 +32,7 @@ Gameboard.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  board: state.board
+  board: state.board.current
 });
 
 const mapDispatchToProps = dispatch => ({

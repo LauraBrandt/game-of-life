@@ -1,7 +1,11 @@
-import { TICK, SET_RANDOM, SET_PATTERN, CLEAR, TOGGLE_CELL } from './types';
+import { TICK, BACK, SET_RANDOM, SET_PATTERN, CLEAR, TOGGLE_CELL } from './types';
 
 export const tick = () => ({
   type: TICK
+});
+
+export const back = () => ({
+  type: BACK
 });
 
 export const setRandom = () => ({

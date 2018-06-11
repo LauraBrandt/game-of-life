@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { tick, setRandom, setPattern, clearBoard } from '../actions/boardActions';
-import { incrementGeneration, resetGeneration } from '../actions/generationActions';
+import { tick, back, setRandom, setPattern, clearBoard } from '../actions/boardActions';
+import { incrementGeneration, decrementGeneration, resetGeneration } from '../actions/generationActions';
 import '../styles/css/Controller.css';
 import patterns from '../startPatterns';
 
@@ -23,6 +23,8 @@ export class Controller extends Component {
     this.randomize = this.randomize.bind(this);
     this.setPattern = this.setPattern.bind(this);
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.goBack = this.goBack.bind(this);
+    this.goForward = this.goForward.bind(this);
   }
 
   togglePlay() {
@@ -76,6 +78,16 @@ export class Controller extends Component {
     clearInterval(this.state.timer);
   }
 
+  goBack() {
+    this.props.back();
+    this.props.decrementGeneration();
+  }
+
+  goForward() {
+    this.props.tick();
+    this.props.incrementGeneration();
+  }
+
   render() {
     return (
       <div className="controller">
@@ -87,6 +99,11 @@ export class Controller extends Component {
           <button className="controller-button" onClick={this.clear}>
             Clear
           </button>
+          <div className="arrows">
+            <button className="arrow arrow-left" onClick={this.goBack}>&#9664;</button>
+            <p>Move 1 generation</p>
+            <button className="arrow arrow-right" onClick={this.goForward}>&#9654;</button>
+          </div>
         </div>
         
         <div className="controller-start-config">
@@ -118,10 +135,12 @@ export class Controller extends Component {
 
 Controller.propTypes = {
   tick: PropTypes.func.isRequired,
+  back: PropTypes.func.isRequired,
   randomize: PropTypes.func.isRequired,
   setPattern: PropTypes.func.isRequired,
   clearBoard: PropTypes.func.isRequired,
   incrementGeneration: PropTypes.func.isRequired,
+  decrementGeneration: PropTypes.func.isRequired,
   resetGeneration: PropTypes.func.isRequired
 }
 
@@ -129,8 +148,10 @@ const mapDispatchToProps = dispatch => ({
   randomize: () => dispatch(setRandom()),
   setPattern: pattern => dispatch(setPattern(pattern)),
   tick: () => dispatch(tick()),
+  back: () => dispatch(back()),
   clearBoard: () => dispatch(clearBoard()),
   incrementGeneration: () => dispatch(incrementGeneration()),
+  decrementGeneration: () => dispatch(decrementGeneration()),
   resetGeneration: () => dispatch(resetGeneration()),
 });
 

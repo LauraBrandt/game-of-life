@@ -18,6 +18,38 @@
   .controller .controller-controls {
     flex: 4;
     height: max-content; }
+    .controller .controller-controls .arrows {
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      .controller .controller-controls .arrows p {
+        margin: 0;
+        padding: 0;
+        flex: 3;
+        text-align: center; }
+      .controller .controller-controls .arrows .arrow {
+        font-size: 1.3rem;
+        color: white;
+        padding: 0.2rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0.3rem;
+        font-family: "Montserrat", sans-serif;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        background-color: #e5ac00;
+        cursor: pointer;
+        flex: 1;
+        align-self: stretch; }
+        .controller .controller-controls .arrows .arrow:hover, .controller .controller-controls .arrows .arrow:focus {
+          outline: none;
+          background-color: #efb400; }
+        .controller .controller-controls .arrows .arrow:active {
+          font-size: 1.2rem;
+          background-color: #fabb00; }
+        @media screen and (max-width: 770px) {
+          .controller .controller-controls .arrows .arrow {
+            font-size: 0.9em; } }
   .controller .controller-start-config {
     flex: 5; }
     .controller .controller-start-config span {

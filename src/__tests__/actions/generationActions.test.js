@@ -11,6 +11,16 @@ describe('generationActions', () => {
     });
   });
 
+  describe('decrementGeneration', () => {
+    it('should have a type of DECREMENT_GENERATION', () => {
+      const expectation = {
+        type: 'DECREMENT_GENERATION'
+      }
+      const result = generationActions.decrementGeneration();
+      expect(result).toEqual(expectation);
+    });
+  });
+
   describe('resetGeneration', () => {
     it('should have a type of RESET_GENERATION', () => {
       const expectation = {

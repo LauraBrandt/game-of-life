@@ -11,6 +11,16 @@ describe('boardActions', () => {
     });
   });
 
+  describe('back', () => {
+    it('should have a type of BACK', () => {
+      const expectation = {
+        type: 'BACK'
+      }
+      const result = boardActions.back();
+      expect(result).toEqual(expectation);
+    });
+  });
+
   describe('setRandom', () => {
     it('should have a type of SET_RANDOM', () => {
       const expectation = {

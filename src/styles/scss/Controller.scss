@@ -24,6 +24,43 @@
     @extend %controller-div;
     flex: 4;
     height: max-content; 
+    .arrows {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      p {
+        margin: 0;
+        padding: 0;
+        flex: 3;
+        text-align: center;
+      }
+      .arrow {
+        font-size: 1.3rem;
+        color: white;
+        padding: 0.2rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0.3rem;
+        font-family: $main-font;
+        border: 1px solid $grey;
+        border-radius: 5px;
+        background-color: darken($yellow, 8%);
+        cursor: pointer;
+        flex: 1;
+        align-self: stretch;
+        &:hover, &:focus {
+          outline: none;
+          background-color: darken($yellow, 6%);
+        }
+        &:active {
+          font-size: 1.2rem;
+          background-color: darken($yellow, 4%);
+        }
+        @media screen and (max-width: $break-sm) {
+          font-size: 0.9em;
+        }
+      }
+    }
   }
   .controller-start-config {
     @extend %controller-div;

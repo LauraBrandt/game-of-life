@@ -42,7 +42,10 @@ describe('<App />', () => {
       const mockStore = configureStore();
       const initialState = {
         generation: 0,
-        board: []
+        board: {
+          current: [],
+          history: []
+        }
       }
       const store = mockStore(initialState);
       // when

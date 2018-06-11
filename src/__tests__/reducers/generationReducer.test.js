@@ -1,4 +1,4 @@
-import { INCREMENT_GENERATION, RESET_GENERATION, CLEAR } from '../../actions/types';
+import { INCREMENT_GENERATION, DECREMENT_GENERATION, RESET_GENERATION, CLEAR } from '../../actions/types';
 import generationReducer from '../../reducers/generationReducer';
 
 describe('generationReducer', () => {
@@ -14,6 +14,26 @@ describe('generationReducer', () => {
     const afterState = generationReducer(beforeState, action);
     // then
     expect(afterState).toBe(6);
+  });
+
+  it('decrements generation', () => {
+    // given
+    const beforeState = 5;
+    const action = {type: DECREMENT_GENERATION};
+    // when
+    const afterState = generationReducer(beforeState, action);
+    // then
+    expect(afterState).toBe(4);
+  });
+
+  it("won't decrement below 0", () => {
+    // given
+    const beforeState = 0;
+    const action = {type: DECREMENT_GENERATION};
+    // when
+    const afterState = generationReducer(beforeState, action);
+    // then
+    expect(afterState).toBe(0);
   });
 
   it('resets generation', () => {

@@ -10,15 +10,18 @@ import Generations from '../components/Generations'
 import Gameboard from '../components/Gameboard';
 import Controller from '../components/Controller';
 
-describe.skip('integration', () => {
+describe('integration', () => {
   const mockStore = configureStore();
   const initialState = {
     generation: 3,
-    board: [
-      [ 1, 0 ],
-      [ 0, 1 ],
-      [ 1, 1 ]
-    ]
+    board: {
+      current: [
+        [ 1, 0 ],
+        [ 0, 1 ],
+        [ 1, 1 ]
+      ],
+      history: []
+    }
   }
 
   describe('props passed correctly', () => {
@@ -99,7 +102,7 @@ describe.skip('integration', () => {
       jest.clearAllTimers();
     });
 
-    it('dispatches clearBoard and randomGeneration on click of "Clear" button', () => {
+    it('dispatches clearBoard and resetGeneration on click of "Clear" button', () => {
       const button = wrapper.find(Controller).find('.controller-button').at(1);
       expect(button.text()).toBe('Clear');
       button.simulate('click');
@@ -147,6 +150,32 @@ describe.skip('integration', () => {
       const lastAction = actions[actions.length-1];
       expect(lastAction.type).toBe('SET_PATTERN');
       expect(lastAction.pattern).toBeDefined;
+    });
+
+    it('dispatches back and decrementGeneration on click of back button', () => {
+      const button = wrapper.find(Controller).find('.arrow-left');
+      button.simulate('click');
+
+      const actions = store.getActions();
+      expect(actions[actions.length-2]).toEqual({
+        type: 'BACK'
+      });
+      expect(actions[actions.length-1]).toEqual({
+        type: 'DECREMENT_GENERATION'
+      });
+    });
+
+    it('dispatches tick and incrementGeneration on click of forward button', () => {
+      const button = wrapper.find(Controller).find('.arrow-right');
+      button.simulate('click');
+
+      const actions = store.getActions();
+      expect(actions[actions.length-2]).toEqual({
+        type: 'TICK'
+      });
+      expect(actions[actions.length-1]).toEqual({
+        type: 'INCREMENT_GENERATION'
+      });
     });
   });
 

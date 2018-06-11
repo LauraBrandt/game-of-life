@@ -1,22 +1,52 @@
-import { TICK, SET_RANDOM, SET_PATTERN, TOGGLE_CELL, CLEAR } from '../actions/types';
+import { TICK, BACK, SET_RANDOM, SET_PATTERN, TOGGLE_CELL, CLEAR } from '../actions/types';
 import { getInitialState, getRandomState, getPatternState, toggleCell, getNextState, resetState } from '../helpers';
 
 const numRows = 30;
 const numCols = 50;
-const initialState = getInitialState(numRows, numCols);
+const initialBoard = getInitialState(numRows, numCols);
+const initialState = {
+  current: initialBoard,
+  history: []
+}
 
 const boardReducer = (state = initialState, action) => {
+  let newHistory;
   switch (action.type) {
     case TICK:
-      return getNextState(state);
+      newHistory = [...state.history, state.current];
+      return {
+        current: getNextState(state.current),
+        history: newHistory
+      }
+    case BACK:
+      if (state.history.length === 0) {
+        return state;
+      }
+      return {
+        current: state.history[state.history.length-1],
+        history: state.history.slice(0, state.history.length-1)
+      }
     case SET_RANDOM:
-      return getRandomState(state);
+      return {
+        current: getRandomState(state.current),
+        history: []
+      }
     case SET_PATTERN:
-      return getPatternState(state, action.pattern);
+      return {
+        current: getPatternState(state.current, action.pattern),
+        history: []
+      }
     case TOGGLE_CELL:
-      return toggleCell(state, action.cell);
+      newHistory = [...state.history, state.current];
+      return {
+        current: toggleCell(state.current, action.cell),
+        history: newHistory
+      }
     case CLEAR:
-      return resetState(state);
+      return {
+        current: resetState(state.current),
+        history: []
+      }
     default:
       return state;
   }

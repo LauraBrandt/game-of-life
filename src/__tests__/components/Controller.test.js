@@ -6,10 +6,12 @@ import { Controller } from '../../components/Controller';
 describe('<Controller/>', () => {
   const props = {
     tick: jest.fn(),
+    back: jest.fn(),
     randomize: jest.fn(),
     setPattern: jest.fn(),
     clearBoard: jest.fn(),
     incrementGeneration: jest.fn(),
+    decrementGeneration: jest.fn(),
     resetGeneration: jest.fn()
   }
 
@@ -17,10 +19,12 @@ describe('<Controller/>', () => {
 
   afterEach(() => {
     props.tick.mockClear();
+    props.back.mockClear();
     props.randomize.mockClear();
     props.setPattern.mockClear();
     props.clearBoard.mockClear();
     props.incrementGeneration.mockClear();
+    props.decrementGeneration.mockClear();
     props.resetGeneration.mockClear();
   });
 
@@ -35,6 +39,13 @@ describe('<Controller/>', () => {
 
     it('has the correct number of buttons', () => {
       expect(wrapper.find('.controller-button')).toHaveLength(4);
+    });
+
+    it('has a forward and backward button', () => {
+      expect(wrapper.find('.arrows')).toHaveLength(1);
+      expect(wrapper.find('.arrow')).toHaveLength(2);
+      expect(wrapper.find('.arrow-left')).toHaveLength(1);
+      expect(wrapper.find('.arrow-right')).toHaveLength(1);
     });
 
     it('the first button has text "Play" or "Pause" depending on state.isPlaying', () => {
@@ -101,6 +112,26 @@ describe('<Controller/>', () => {
       wrapper.find('.controller-button').at(1).simulate('click');
       
       expect(wrapper.instance().clear).toBeCalled();
+    });
+
+    it('calls goBack on click of back button', () => {
+      wrapper.instance().goBack = jest.fn();
+      wrapper.instance().forceUpdate();
+      wrapper.update();
+
+      wrapper.find('.arrow-left').simulate('click');
+      
+      expect(wrapper.instance().goBack).toBeCalled();
+    });
+    
+    it('calls goForward on click of forward button', () => {
+      wrapper.instance().goForward = jest.fn();
+      wrapper.instance().forceUpdate();
+      wrapper.update();
+
+      wrapper.find('.arrow-right').simulate('click');
+      
+      expect(wrapper.instance().goForward).toBeCalled();
     });
 
     it('calls randomize on click of Random button', () => {
@@ -352,6 +383,34 @@ describe('<Controller/>', () => {
         expect(wrapper.state('dropdownOpen')).toBe(false);
         wrapper.instance().toggleDropdown();
         expect(wrapper.state('dropdownOpen')).toBe(true);
+      });
+    });
+
+    describe('goBack', () => {
+      it('calls props.back', () => {
+        const initial = wrapper.instance().props.back.mock.calls.length;
+        wrapper.instance().goBack();
+        expect(wrapper.instance().props.back).toHaveBeenCalledTimes(initial + 1);
+      });
+
+      it('calls props.decrementGeneration', () => {
+        const initial = wrapper.instance().props.decrementGeneration.mock.calls.length;
+        wrapper.instance().goBack();
+        expect(wrapper.instance().props.decrementGeneration).toHaveBeenCalledTimes(initial + 1);
+      });
+    });
+    
+    describe('goForward', () => {
+      it('calls props.tick', () => {
+        const initial = wrapper.instance().props.tick.mock.calls.length;
+        wrapper.instance().goForward();
+        expect(wrapper.instance().props.tick).toHaveBeenCalledTimes(initial + 1);
+      });
+
+      it('calls props.incrementGeneration', () => {
+        const initial = wrapper.instance().props.incrementGeneration.mock.calls.length;
+        wrapper.instance().goForward();
+        expect(wrapper.instance().props.incrementGeneration).toHaveBeenCalledTimes(initial + 1);
       });
     });
 

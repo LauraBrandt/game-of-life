@@ -22,6 +22,25 @@ exports[`<Controller/> snapshot renders correctly 1`] = `
     >
       Clear
     </button>
+    <div
+      className="arrows"
+    >
+      <button
+        className="arrow arrow-left"
+        onClick={[Function]}
+      >
+        ◀
+      </button>
+      <p>
+        Move 1 generation
+      </p>
+      <button
+        className="arrow arrow-right"
+        onClick={[Function]}
+      >
+        ▶
+      </button>
+    </div>
   </div>
   <div
     className="controller-start-config"
